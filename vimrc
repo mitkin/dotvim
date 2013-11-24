@@ -1,4 +1,5 @@
 execute pathogen#infect()
+
 syntax on
 filetype plugin indent on
 
@@ -9,6 +10,7 @@ endif
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+set bg=dark
 
 
 " list of plugins used
