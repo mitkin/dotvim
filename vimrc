@@ -6,6 +6,10 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
 
 " list of plugins used
 " pathogen -- autoload plugins from the ~/.vim/bundle directory
