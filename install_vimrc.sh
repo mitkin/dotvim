@@ -10,4 +10,3 @@ sudo pip install git+git://github.com/nvie/nose-machineout.git#egg=nose_machineo
 sudo pip install jedi
 sudo pip install vim_bridge
 sudo apt-get install exuberant-ctags
-
