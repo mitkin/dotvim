@@ -46,3 +46,15 @@
 [submodule "bundle/vim-pyunit"]
 	path = bundle/vim-pyunit
 	url = https://github.com/nvie/vim-pyunit.git
+[submodule "vim-c-cr"]
+	path = vim-c-cr
+	url = https://github.com/jtmkrueger/vim-c-cr.git
+[submodule "bundle/vim-c-cr"]
+	path = bundle/vim-c-cr
+	url = https://github.com/jtmkrueger/vim-c-cr.git
+[submodule "bundle/BracketComplete"]
+	path = bundle/BracketComplete
+	url = https://github.com/vim-scripts/BracketComplete.git
+[submodule "bundle/csapprox"]
+	path = bundle/csapprox
+	url = https://github.com/vim-scripts/CSApprox.git

@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/scratch/users/mitkin/dnps/git_repo/send_ice_data/ossi'
+let g:netrw_dirhist_2='/scratch/users/mitkin/dnps/git_repo/send_ice_data/tests/codingstd'
+let g:netrw_dirhist_3='/scratch/users/mitkin/dnps/git_repo/ossi/ossi'
+let g:netrw_dirhist_4='/scratch/users/mitkin/dnps/git_repo/ossi/scripts'
