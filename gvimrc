@@ -1,3 +1,3 @@
 set guioptions-=T " no toolbar
-
-set bg=light
+set bg=dark
+set linespace=2
