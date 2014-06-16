@@ -16,6 +16,7 @@ set softtabstop=4
 set autoindent
 set smartindent
 set bg=dark
+colorscheme molokai
 set number
 " set nofoldenable
 set hlsearch
