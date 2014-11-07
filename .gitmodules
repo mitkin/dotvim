@@ -64,3 +64,6 @@
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
+[submodule "bundle/nose.vim"]
+	path = bundle/nose.vim
+	url = https://github.com/lambdalisue/nose.vim.git
