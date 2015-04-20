@@ -25,6 +25,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set mouse=a
+set t_Co=256
 
 " list of plugins used
 " pathogen -- autoload plugins from the ~/.vim/bundle directory
