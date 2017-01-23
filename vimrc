@@ -58,3 +58,7 @@ let g:ctrlp_extensions = ['funky']
 
 
 nmap <F3> :TagbarToggle<CR>
+
+:set textwidth=80
+:set colorcolumn=+2        " highlight column after 'textwidth'
+:highlight ColorColumn ctermbg=darkgrey
