@@ -21,8 +21,10 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate' " You will also need to `apt-get install vim-addon-mw-utils`
 Plugin 'honza/vim-snippets'
-Plugin 'andviro/flake8-vim'
+Plugin 'majutsushi/tagbar'
+" Plugin 'andviro/flake8-vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/nerdtree'
 Bundle 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
@@ -69,4 +71,5 @@ set mouse=a
 " Colorscheme
 colorscheme molokai
 
-" nmap <F3> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
+set foldlevelstart=1
