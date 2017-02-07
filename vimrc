@@ -1,64 +1,72 @@
-execute pathogen#infect()
-call pathogen#incubate()
-call pathogen#helptags()
+set nocompatible              " required
+filetype off                  " required
 
-syntax on
-filetype plugin indent on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-"set tabstop=4
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set autoindent
-set smartindent
-set bg=dark
-colorscheme molokai
-set number
-" set nofoldenable
-set hlsearch
-set incsearch
-set nobackup
-set nowritebackup
-set noswapfile
-set mouse=a
-set t_Co=256
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-" list of plugins used
-" pathogen -- autoload plugins from the ~/.vim/bundle directory
-" tComment -- comment/uncomment with ctrl-/ ctrl-/
-" NERDTree -- open sidebar with :NERDTree
-" easyMotion: \\w
-" snipMate -- see file ~/.vim/bundle/snipmate.vim/snippets/python.snippets
-"
-" remap keys
-map <F2> :NERDTreeToggle <CR>
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
-" let g:jedi#related_names_command = "<leader>z"
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#popup_select_first = 0
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim' " install exuberant-ctags and run for all files
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate' " You will also need to `apt-get install vim-addon-mw-utils`
+Plugin 'honza/vim-snippets'
+Plugin 'andviro/flake8-vim'
+Plugin 'davidhalter/jedi-vim'
+Bundle 'tomasr/molokai'
 
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-nnoremap <CR> :noh<CR><CR>
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-nnoremap <C-f> :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr> 
-nnoremap <C-b> :bnext<CR>
-nnoremap <Leader>gc :!git commit -v %<CR>
-
-
-" ctrlP settings
+" -------- Plugin settings
+"ctrlP settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['funky'] 
 
 
-nmap <F3> :TagbarToggle<CR>
+" ------- Key mappings
 
-:set textwidth=80
-:set colorcolumn=+2        " highlight column after 'textwidth'
-:highlight ColorColumn ctermbg=darkgrey
+" Navigate accross multiple splits using
+" movement keys
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Jedi autocompletion setup
+ let g:jedi#completions_command = "<c-n>"
+
+" Python settings
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" General settings
+set number
+set relativenumber
+set mouse=a
+
+" Colorscheme
+colorscheme molokai
+
+" nmap <F3> :TagbarToggle<CR>

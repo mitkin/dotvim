@@ -1,12 +1,8 @@
 ln -s -f `pwd`/vimrc $HOME/.vimrc
-ln -s -f `pwd`/gvimrc $HOME/.gvimrc
 
-cd ~/.vim
-
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo pip install flake8
-sudo pip install git+git://github.com/nvie/nose-machineout.git#egg=nose_machineout
-sudo pip install jedi
-sudo pip install vim_bridge
 sudo apt-get install exuberant-ctags
+sudo apt-get install vim-addon-mw-utils
 
-git submodule update --recursive --init
+vim -E -s -c 'source ~/.vimrc' -c PluginInstall -c qall
