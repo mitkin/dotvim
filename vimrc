@@ -17,6 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'pitluga/vimux-nose-test'
 " Plugin 'christoomey/vim-tmux-runner'
 " Plugin 'janko-m/vim-test'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
@@ -183,3 +184,7 @@ function! FollowTag()
 endfunction
 
 nnoremap <c-w>] :call FollowTag()<CR>
+
+" Run nose 
+map <Leader>tf :RunNoseTestFocused<CR>
+map <Leader>ta :RunAllNoseTests<CR>
