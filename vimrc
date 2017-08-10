@@ -27,12 +27,11 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate' " You will also need to `apt-get install vim-addon-mw-utils`
 Plugin 'honza/vim-snippets'
 Plugin 'majutsushi/tagbar'
-Plugin 'andviro/flake8-vim'
-" Plugin 'davidhalter/jedi-vim'
+" Plugin 'andviro/flake8-vim'
+Plugin 'davidhalter/jedi-vim'
 " Plugin 'scrooloose/nerdtree'
 Plugin 'haya14busa/incsearch.vim'
-" Plugin 'python-rope/ropevim'
-Plugin 'valloric/youcompleteme'
+Plugin 'python-rope/ropevim'
 Bundle 'tomasr/molokai'
 " Bundle 'klen/python-mode'
 
@@ -47,7 +46,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['funky']
 
 " ------- NerdTree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " ------- Key mappings
 " Navigate accross multiple splits using
@@ -113,33 +112,33 @@ map g/ <Plug>(incsearch-stay)
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
-
-" Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
-
-"Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-" Auto check on save
-let g:pymode_lint_write = 1
-
-" Support virtualenv
-let g:pymode_virtualenv = 1
-
-" Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-
-" syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-" Don't autofold code
-let g:pymode_folding = 0
+" let g:pymode_rope = 1
+"
+" " Documentation
+" let g:pymode_doc = 1
+" let g:pymode_doc_key = 'K'
+"
+" "Linting
+" let g:pymode_lint = 1
+" let g:pymode_lint_checker = "pyflakes,pep8"
+" " Auto check on save
+" let g:pymode_lint_write = 1
+"
+" " Support virtualenv
+" let g:pymode_virtualenv = 1
+"
+" " Enable breakpoints plugin
+" let g:pymode_breakpoint = 1
+" let g:pymode_breakpoint_bind = '<leader>b'
+"
+" " syntax highlighting
+" let g:pymode_syntax = 1
+" let g:pymode_syntax_all = 1
+" let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+" let g:pymode_syntax_space_errors = g:pymode_syntax_all
+"
+" " Don't autofold code
+" let g:pymode_folding = 0
 
 set noswapfile
 
@@ -157,3 +156,30 @@ let g:netrw_banner = 0
 " let g:netrw_winsize = 25
 :set makeprg=python\ %
 :set autowrite
+
+set nocompatible
+
+set encoding=utf-8
+
+" set rtp+=$VIM/vimfiles/bundle/YouCompleteMe
+
+filetype plugin indent on
+
+
+" ctags
+" Some useful things to remember 
+" <c-]> : Jumps to the tag definition of the word under cursor updating tag stack.
+" <c-w>] : Jumps to the tag definition of in the right vertical split  the word under cursor updating tag stack.
+" <c-w>} : Opens a preview window with the location of the tag definition. The cursor does not change its position, so tag stack is not updated.
+" <c-w>z : Close preview window.
+" <c-w>v : Split current window in two, keeping the cursor position.
+
+function! FollowTag()
+  if !exists("w:tagbrowse")
+    vsplit
+    let w:tagbrowse=1
+  endif
+  execute "tag " . expand("<cword>")
+endfunction
+
+nnoremap <c-w>] :call FollowTag()<CR>
